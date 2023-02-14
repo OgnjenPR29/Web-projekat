@@ -1,0 +1,128 @@
+﻿
+@{
+    ViewBag.Title = "Registracija";
+}
+
+<head>
+    <script>
+
+            function validate(event) {
+
+                var sifra = document.getElementById("lozinka");
+                var val = sifra.value;
+
+                if (val.length < 5) {
+                    event.preventDefault();
+                    alert("Sifra mora biti duza od 8 karaktera");
+                    document.getElementById("lozinka").focus;
+                    return false;
+
+
+                }
+                return true;
+            }
+
+        
+
+
+    </script>
+    
+    <style>
+        * {
+            box-sizing: border-box
+        }
+
+        .container {
+            padding: 16px;
+        }
+
+        input[type=text], input[type=email], input[type=password], input[type=date], select {
+            width: 100%;
+            padding: 15px;
+            margin: 5px 0 22px 0;
+            display: inline-block;
+            border: none;
+            background: #f1f1f1;
+        }
+
+        input[type=text]:focus, input[type=password]:focus {
+            background-color: #ddd;
+            outline: none;
+        }
+
+
+        hr {
+            border: 1px solid black;
+            margin-bottom: 25px;
+        }
+
+        .registerbtn {
+            background-color: #009879;
+            color: white;
+            padding: 16px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            opacity: 0.9;
+        }
+
+            .registerbtn:hover {
+                opacity: 1;
+            }
+
+        a {
+            color: dodgerblue;
+        }
+
+        .signin {
+            background-color: #f1f1f1;
+            text-align: center;
+        }
+    </style>
+</head>
+
+
+<form action="~/Authentication/Registrovan" id="forma" onsubmit="return validate(event)" method="post">
+    <div class="container">
+
+        <h1 style="text-align:center">Registracija</h1>
+        <p>Unesite svoje podatke</p>
+        <hr>
+
+        <label for="username"><b>Username</b></label>
+        <input type="text" placeholder="Unesite Username" name="username" id="username" required>
+
+        <label for="ime"><b>Ime</b></label>
+        <input type="text" placeholder="Unesite Ime" name="ime" id="ime" required>
+
+        <label for="prezime"><b>Prezime</b></label>
+        <input type="text" placeholder="Unesite Prezime" name="prezime" id="prezime" required>
+
+        <label for="lozinka"><b>Sifra</b></label>
+        <input type="password" placeholder="Unesite Sifru" name="lozinka" id="lozinka" required>
+
+        <label for="email"><b>Email</b></label>
+        <input type="email" placeholder="Unesite Email" name="email" id="email" required>
+
+        <label for="datumrodjenja"><b>Datum rodjenja</b></label>
+        <input type="date" pattern="\d{2}-\d{2}-{4}" placeholder="Unesite Datum rodjenja" max="2019-01-01" name="datumrodjenja" id="datumrodjenja" required>
+
+        <input type="hidden" name="uloga" id="uloga" value="Posetilac" />
+
+        <label for="pol"><b>Pol</b></label>
+        <select name="pol" id="pol" required>
+            <option value="Muski">Muski</option>
+            <option value="Zenski">Zenski</option>
+        </select>
+
+
+        <hr>
+
+        <button type="submit" class="registerbtn">Register</button>
+    </div>
+
+    <div class="container signin">
+        <p>Vec ste registrovani? <a href="~/Home/LogIn">Sign in</a>.</p>
+    </div>
+</form>

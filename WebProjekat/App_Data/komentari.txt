@@ -1,0 +1,11 @@
+zika1;Flex Kralja Petra 7 Beograd;Super je;5;False
+maja1;Flex Kralja Petra 7 Beograd;Dobar je;4;True
+jova1;Flex Kralja Petra 7 Beograd;Nije ne�to;2;True
+zmaj;Flex Kralja Petra 7 Beograd;Dobar fitnes centar.Sve preporuke.;5;False
+zmaj;Flex Kralja Petra 7 Beograd;Dobar fitnes centar.Sve preporuke.;5;False
+zmaj;Flex Kralja Petra 7 Beograd;Nije lose;3;True
+zmaj;Extra Fit Kneza Milana 7 Beograd;Moj Komentar;1;True
+whistler;Flex Kralja Petra 7 Beograd;Dobar je.;3;True
+zmaj;Flex Kralja Petra 7 Beograd;asadasd;1;True
+zmaj;Mega Gym Kosovska 1 Bajina Basta;Bio sam, odlican je;1;True
+maja;Mega Gym Kosovska 1 Bajina Basta;Dobar fitnes centar;5;False

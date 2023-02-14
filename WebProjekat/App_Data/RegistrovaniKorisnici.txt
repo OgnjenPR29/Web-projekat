@@ -1,0 +1,16 @@
+pera1;Petar;Petrovic;12345;pera@gmail.com;22/11/2009;Vlasnik;Muski
+mika1;Mika;Mikic;aaa;mika@gmail.com;22/11/2009;Vlasnik;Muski
+zmaj;jovan;jovanovic;123456;jova@gmail.com;03/06/2022;Posetilac;Muski
+ognjen1;Ognjen;Sekulic;134567;ognjen@gmail.com;03/06/2022;Posetilac;Muski
+luka1;Luka;Sekulic;12345690;luka@gmail.com;02/06/2022;Posetilac;Muski
+papadubi;Djordje;Cvarkov;12342567;djoka@gmail.com;01/06/2022;Posetilac;Muski
+drago;Dragan;Torbica;asdasdas;asfdgfhfs;01/06/2022;Posetilac;Muski
+whistler;Sergej;Trifunovic;12345678;sergejt@gmail.com;29/06/2022;Posetilac;Muski
+nixa;Nixa;Zizu;asdfa;nixa@gmail.com;29/06/2022;Posetilac;Muski
+marko1;marko;markovic;12345;marko@gmail.com;30/06/2022;Trener;Muski
+trener1;Zeljko;Bebek;123456;bebek@gmail.com;29/06/2022;Trener;Muski
+tifa;Mladen;Vojicic;12345;tifa@gmail.com;15/07/2022;Trener;Muski
+boskic;Boskic;Mladji;123456;bosic@gmail.com;08/07/2022;Trener;Muski
+maja;Marija;Marijic;12345;marija@gmail.com;20/07/1995;Posetilac;Zenski
+milica1;Milica;Milicic;12345;mici@gmail.com;29/12/1999;Trener;Muski
+ivana1;Ivana;Spanovic;12345;ivana@gmail.com;01/01/2019;Posetilac;Zenski

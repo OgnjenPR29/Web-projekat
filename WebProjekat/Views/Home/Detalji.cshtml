@@ -1,0 +1,129 @@
+﻿
+@{
+    ViewBag.Title = "Detalji";
+}
+
+@{
+    var a = @ViewBag.details;
+}
+
+<head>
+    <style>
+
+        hr {
+            border: 1px solid black;
+            margin-bottom: 25px;
+        }
+
+        .kom {
+            white-space: nowrap;
+            width: 100%;
+            background-color: #ddd;
+            border: 2px solid white;
+        }
+
+        h2 {
+            font-family: sans-serif;
+            text-align: center;
+        }
+
+        h3 {
+            font-family: sans-serif;
+        }
+
+        p {
+            font-size: 18px;
+            font-family: sans-serif;
+            margin-left: 5px;
+        }
+
+        #details {
+            background-color: #ddd;
+            border: 2px solid #009879;
+            width: 100%;
+        }
+
+        table {
+            border: solid 1px white;
+            border-collapse: collapse;
+            font-size: 16px;
+            font-family: sans-serif;
+            width: 100%
+        }
+
+        thead th {
+            background-color: #009879;
+            border: solid 1px white;
+            color: white;
+            padding: 10px;
+            text-align: left;
+        }
+
+        tbody td {
+            border: solid 1px white;
+            color: black;
+            padding: 10px;
+        }
+
+        summary {
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+
+<h2>Detalji o @a.Naziv fitnes centru</h2>
+
+<div id="details">
+    <p>Naziv: @a.Naziv</p>
+    <p>Godina otvaranja :@a.GodinaOtvaranja</p>
+    <p>Adresa: @a.Adresa.Ulica, @a.Adresa.Mesto, @a.Adresa.PostanskiBroj</p>
+    <p>Vlasnik: @a.Posednik</p>
+    <p>Mesecna cena: @a.CenaMesecno din</p>
+    <p>Godisnja cena: @a.CenaGodisnje din</p>
+    <p>Mesecna cena grupnog treninga: @a.CenaGrupno din</p>
+    <p>Mesecna cena sa personalnim trenerom: @a.CenaSaTrenerom din</p>
+    <p>Mesecna cena samostalno: @a.CenaSamostalno din</p>
+</div>
+<br />
+<br />
+
+<hr>
+
+<h2>Predstojeci grupni treninzi</h2>
+
+<br />
+<br />
+
+
+<div class="container">
+    <table>
+        <thead><tr><th>Naziv</th><th>Tip</th><th>Trajanje</th><th>Datum i Vreme</th><th>Kapacitet</th><th>Trenutrno popunjeno</th></tr></thead>
+        <tbody>
+            @foreach (var b in ViewBag.treninzi)
+            {
+                <tr>
+                    <td>@b.Naziv</td>
+                    <td>@b.Tip</td>
+                    <td>@b.TrajanjeTreninga</td>
+                    <td>@b.DatumVreme</td>
+                    <td>@b.Kapacitet</td>
+                    <td>@b.Spisak.Count</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<br />
+<br />
+
+<hr>
+
+<h3>Komentari:</h3>
+<br />
+
+@foreach (var item in ViewBag.komentari)
+{<div class="kom">
+        <p style="margin-left:10px">Korisnik @item.Komentarisao je dao ocenu @item.Ocena! </p> <details style="margin-left:10px"><summary>Kliknite da vidite komentar</summary><p>@item.Tekst</p></details><br />
+    </div>
+}

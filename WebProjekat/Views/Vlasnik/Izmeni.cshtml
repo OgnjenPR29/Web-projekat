@@ -1,0 +1,132 @@
+﻿
+@{
+    ViewBag.Title = "Izmeni";
+}
+
+<head>
+    <style>
+
+        #div1 {
+            background-color: darkgray;
+            height: 58px;
+            width: 100%;
+        }
+
+        #but {
+            width: 100%;
+            font-size: 20px;
+            text-align: center;
+            color: white;
+            padding: 9px 9px 9px 9px;
+            border: 1px solid white;
+            background-color: cornflowerblue;
+            cursor: pointer;
+        }
+
+        #buth {
+            width: 100px;
+            font-size: 20px;
+            text-align: center;
+            color: white;
+            margin-top: 7px;
+            margin-left: 5px;
+            padding: 9px 9px 9px 9px;
+            border: 1px solid white;
+            background-color: cornflowerblue;
+            cursor: pointer;
+        }
+
+        table {
+            border: solid 1px white;
+            border-collapse: collapse;
+            font-size: 16px;
+            font-family: sans-serif;
+            width: 100%
+        }
+
+        thead th {
+            background-color: #009879;
+            border: solid 1px white;
+            color: white;
+            padding: 10px;
+            text-align: left;
+        }
+
+        tbody td {
+            border: solid 1px white;
+            color: black;
+            padding: 10px;
+        }
+
+        form {
+        }
+
+        input[type=text], input[type=password], input[type=date], select, input[type=number], input[type=datetime-local] {
+            width: 100%;
+            padding: 15px;
+            margin: 5px 0 22px 0;
+            display: inline-block;
+            border: none;
+            background: #f1f1f1;
+        }
+
+            input[type=text]:focus, input[type=password]:focus {
+                background-color: #ddd;
+                outline: none;
+            }
+    </style>
+</head>
+
+
+<h2 style="text-align:center">Izmenite centar</h2>
+<br />
+<br />
+<hr>
+<br />
+<br />
+
+<div style="border: 1px solid #009879; padding:9px 9px 9px 9px">
+    <form action="~/Vlasnik/Izmenjen">
+
+        <label for="naziv">Naziv:</label>
+        <input type="text" name="naziv" id="naziv" value="@ViewBag.centar.Naziv" required />
+
+        <label for="ulica">Ulica:</label>
+        <input type="text" name="ulica" id="ulica"  value="@ViewBag.adresa.Ulica" required />
+
+        <label for="mesto">Mesto:</label>
+        <input type="text" name="mesto" id="mesto"  value="@ViewBag.adresa.Mesto" required />
+
+        <label for="postanskibroj">Postanski broj:</label>
+        <input type="text" min="1" name="postanskibroj" id="postanskibroj" value="@ViewBag.adresa.PostanskiBroj" required />
+
+        <label for="godinaotvaranja">Godina otvaranja:</label>
+        <input type="number" min="1900"  name="godinaotvaranja" id="godinaotvaranja" value="@ViewBag.centar.GodinaOtvaranja" required />
+
+        <input type="hidden" name="posednik" id="posednik" value="@ViewBag.centar.Posednik" required />
+
+        <label for="cenamesecno">Cena mesecno:</label>
+        <input type="number" min="1" name="cenamesecno" id="cenamesecno" value="@ViewBag.centar.CenaMesecno" required />
+
+        <label for="cenagodisnje">Cena godisnje:</label>
+        <input type="number" min="1"  name="cenagodisnje" id="cenagodisnje" value="@ViewBag.centar.CenaGodisnje" required />
+
+        <label for="cenasamostalno">Cena samostalno:</label>
+        <input type="number" min="1"  name="cenasamostalno" id="cenasamostalno" value="@ViewBag.centar.CenaSamostalno" required />
+
+        <label for="cenagrupno">Cena grupno:</label>
+        <input type="number" min="1"  name="cenagrupno" id="cenagrupno" value="@ViewBag.centar.CenaGrupno" required />
+
+        <label for="cenasatrenerom">Cena sa trenerom:</label>
+        <input type="number" min="1"  name="cenasatrenerom" id="cenasatrenerom" value="@ViewBag.centar.CenaSaTrenerom" required />
+
+
+        <input type="hidden" name="isdeleted" value="False" />
+        <input type="hidden" name="id" value="@ViewBag.centar.Id" />
+
+        <input type="submit" id="but" value="Izmeni trening" />
+
+    </form>
+
+
+</div>

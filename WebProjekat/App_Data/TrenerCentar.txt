@@ -1,0 +1,3 @@
+marko1;Mega Gym Kosovska 1 Bajina Basta
+trener1;Flex Kralja Petra 7 Beograd
+milica1;Extra Fit Kneza Milana 7 Beograd

@@ -1,0 +1,317 @@
+﻿<head>
+    <style>
+
+        h1 {
+            text-align: center;
+        }
+
+        #but4 {
+            width: 180px;
+            font-size: 16px;
+            text-align: center;
+            color: white;
+            padding: 12px 12px 12px 9px;
+            border: 1px solid white;
+            background-color: #009879;
+            cursor: pointer;
+        }
+
+        #but5 {
+            width: 180px;
+            font-size: 16px;
+            text-align: center;
+            color: white;
+            padding: 12px 12px 12px 9px;
+            border: 1px solid white;
+            background-color: #009879;
+            cursor: pointer;
+        }
+
+
+        #but6 {
+            width: 180px;
+            font-size: 16px;
+            text-align: center;
+            color: white;
+            padding: 12px 12px 12px 9px;
+            border: 1px solid white;
+            background-color: #009879;
+            cursor: pointer;
+        }
+
+
+        #div1 { 
+            background-color:darkgray;
+            height:58px;
+            width:100%;
+        } 
+
+        #but {
+            width: 100px;
+            font-size: 16px;
+            text-align: center;
+            color: white;
+            padding: 12px 12px 12px 9px;
+            border: 1px solid white;
+            background-color: cornflowerblue;
+            cursor: pointer; 
+        }
+
+
+        #but1 {
+            width: 100px;
+            font-size: 16px;
+            color: white;
+            padding: 12px 12px 12px 12px;
+            border: 1px solid white;
+            background-color: #009879;
+            cursor: pointer;
+        }
+
+        #but2 {
+            width: 100px;
+            font-size: 16px;
+            color: white;
+            padding: 12px 12px 12px 12px;
+            border: 1px solid white;
+            background-color: darkslategray;
+            cursor: pointer;
+        }
+
+        #but3 {
+            width: 100px;
+            font-size: 16px;
+            color: white;
+            padding: 12px 12px 12px 12px;
+            border: 1px solid white;
+            background-color: darkred;
+            cursor: pointer;
+        }
+
+        .aa {
+            width: 100%;
+            height: 100%;
+            font-size: 18px;
+            font-family: sans-serif;
+        }
+
+        .reglog {
+            display: inline-block;
+            position: relative;
+            left: 1130px;
+            margin-right:10px;
+            margin-top:5px;
+        }
+        .regtren {
+            display: inline-block;
+            position: relative;
+            left: 520px;
+            margin-right: 10px;
+            margin-top: 5px;
+        }
+        .fce {
+            display: inline-block;
+            position: relative;
+            left: 130px;
+            margin-right: 10px;
+            margin-top: 5px;
+        }
+        .trening {
+            display: inline-block;
+            position: relative;
+            right: 220px;
+        }
+
+        .logOut, .profile {
+            display: inline-block;
+            position: relative;
+            right: 220px;
+            margin-right: 10px;
+            margin-top: 5px;
+        }
+
+
+        #adresaInput, #godinaInputFrom, #godinaInputTo, #nazivInput, .button {
+            width: 150px;
+            font-size: 14px;
+            padding: 12px 12px 12px 12px;
+            border: 1px solid black;
+            margin-bottom: 12px;
+            margin-bottom: 12px;
+        }
+
+        .styled-table {
+            border-collapse: separate;
+            margin: 25px 0;
+            font-size: 15px;
+            font-family: sans-serif;
+            width: 100%;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        }
+
+            .styled-table thead tr {
+                background-color: #009879;
+                color: #ffffff;
+                text-align: left;
+            }
+
+            .styled-table th {
+                cursor: pointer;
+            }
+
+            .styled-table th,
+            .styled-table td {
+                padding: 12px 12px;
+            }
+
+            .styled-table tbody tr {
+                border-bottom: 1px solid #dddddd;
+            }
+
+                .styled-table tbody tr:nth-of-type(even) {
+                    background-color: #f3f3f3;
+                }
+
+                .styled-table tbody tr:last-of-type {
+                    border-bottom: 2px solid #009879;
+                }
+    </style>
+
+    <script src="~/Scripts/JavaScriptIndex.js"></script>
+
+
+    <script>
+        function nekaFunkcija() {
+
+            var myJsVariable = '@ViewBag.Message';
+
+            if (myJsVariable.length == 0) {
+                document.getElementById("regForm").style.visibility = 'visible';
+                document.getElementById("logForm").style.visibility = 'visible';
+                document.getElementById("logOut").style.visibility = 'hidden';
+                document.getElementById("profile").style.visibility = 'hidden';
+                document.getElementById("trening").style.visibility = 'hidden';
+                document.getElementById("regtren").style.visibility = 'hidden';
+                document.getElementById("fce").style.visibility = 'hidden';
+            }
+            else if (myJsVariable.length == 9) {
+
+                document.getElementById("regForm").style.visibility = 'hidden';
+                document.getElementById("logForm").style.visibility = 'hidden';
+                document.getElementById("logOut").style.visibility = 'visible';
+                document.getElementById("profile").style.visibility = 'visible';
+                document.getElementById("trening").style.visibility = 'hidden';
+                document.getElementById("regtren").style.visibility = 'hidden';
+                document.getElementById("fce").style.visibility = 'hidden';
+
+
+            }
+            else if (myJsVariable.length == 7) {
+
+                document.getElementById("regForm").style.visibility = 'hidden';
+                document.getElementById("logForm").style.visibility = 'hidden';
+                document.getElementById("logOut").style.visibility = 'visible';
+                document.getElementById("profile").style.visibility = 'visible';
+                document.getElementById("trening").style.visibility = 'hidden';
+                document.getElementById("regtren").style.visibility = 'visible';
+                document.getElementById("fce").style.visibility = 'visible';
+                
+            }
+            else if (myJsVariable.length == 6) {
+
+                document.getElementById("regForm").style.visibility = 'hidden';
+                document.getElementById("logForm").style.visibility = 'hidden';
+                document.getElementById("logOut").style.visibility = 'visible';
+                document.getElementById("profile").style.visibility = 'visible';
+                document.getElementById("trening").style.visibility = 'visible';
+                document.getElementById("regtren").style.visibility = 'hidden';
+                document.getElementById("fce").style.visibility = 'hidden';
+
+            }
+
+
+        }
+
+
+
+    </script>
+
+
+</head>
+
+<body onload="nekaFunkcija()" style="background-color:white">
+    <div id="div1">
+        <form class="reglog" style="margin-right:10px" id="regForm" action="~/Home/Registracija"><input id="but" type="submit" value="Registruj se" /></form>
+        <form class="reglog" id="logForm" action="~/Home/LogIn"><input id="but1" type="submit" value="Log in" /></form>
+        <form class="logOut" id="logOut" action="~/Home/LogOut"><input id="but3" type="submit" value="LogOut" /></form>
+        <form class="profile" id="profile" action="~/Home/Profil"><input id="but2" type="submit" value="My Profile" /></form>
+        <form class="trening" style="display:inline;" id="trening" action="~/Trener/Index"><input id="but4" type="submit" value="Upravljajte treninzima" /></form>
+        <form class="regtren" style="display:inline;" id="regtren" action="~/Vlasnik/Index"><input id="but5" type="submit" value="Registrujte trenera" /></form>
+        <form class="fce" style="display:inline;" id="fce" action="~/Vlasnik/FCentri"><input id="but6" type="submit" value="Upravljajte centrima" /></form>
+    
+    </div>
+        <br />
+    <h1>SAJT ZA FITNES CENTRE</h1>
+
+    <div>
+        <input type="text" id="nazivInput" placeholder="Search by naziv..." />
+
+        <input type="text" id="adresaInput" placeholder="Search by adresa..." />
+
+        <div style="display: inline-block;">
+            <input type="number" id="godinaInputFrom" placeholder="From year..." />
+            <input type="number" id="godinaInputTo" placeholder="To year..." />
+
+        </div>
+        <input style="cursor:pointer; font-family:sans-serif; font-size:15px;" type="button" class="button" onclick="Search()" value="Search" />
+    </div>
+
+
+
+    <table class="styled-table" id="filterTabela">
+
+        <thead>
+            <tr> <th onclick="sortTable(0)"> Naziv</th><th onclick="sortTable(1)">Adresa</th><th onclick="sortTable(2)">Godina</th><th>Details</th> </tr>
+        </thead>
+
+        <tbody> 
+
+            @foreach (var item in ViewBag.fitnesCentri)
+            {
+                <tr>
+                    <td>@item.Naziv</td>
+                    <td>@item.Adresa.Ulica</td>
+                    <td>@item.GodinaOtvaranja</td>
+                    <td>
+                        @if (@ViewBag.Message.Length == 0 || ViewBag.Message.Length == 6)
+                        {
+                            <form accept-charset="utf-08" id="detalji" action="~/Home/Detalji" method="post">
+
+                                <input type="hidden" name="id" value="@item.Id" />
+                                <input style="cursor:pointer; font-size:16px; font-family:sans-serif" class="aa" type="submit" value="Detalji" />
+                            </form>
+                        }
+                        else if (@ViewBag.Message.Length == 9)
+                        {
+                            <form accept-charset="utf-08" id="detalji" action="~/Posetilac/Detalji" method="post">
+
+                                <input type="hidden" name="id" value="@item.Id" />
+                                <input style="cursor:pointer; font-size:16px; font-family:sans-serif" class="aa" type="submit" value="Detalji" />
+                            </form>
+                        }
+                        else if (@ViewBag.Message.Length == 7)
+                        {
+                            <form accept-charset="utf-08" id="detalji" action="~/Vlasnik/Detalji" method="post">
+
+                                <input type="hidden" name="id" value="@item.Id" />
+                                <input style="cursor:pointer; font-size:16px; font-family:sans-serif" class="aa" type="submit" value="Detalji" />
+                            </form>
+                        }
+                    </td>
+                </tr>
+
+            }
+        </tbody>
+
+    </table>
+</body>

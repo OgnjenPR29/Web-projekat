@@ -1,0 +1,230 @@
+﻿
+@{
+    ViewBag.Title = "ProfilTrener";
+}
+
+@{
+    var k = ViewBag.korisnik;
+}
+<head>
+    <style>
+
+        #fitnesInput, #nazivInput, #tipInput, #btn, #godinaInputFrom, #godinaInputTo, #adresaInput {
+            width: 150px;
+            font-size: 14px;
+            padding: 12px 12px 12px 12px;
+            border: 1px solid black;
+            margin-bottom: 12px;
+            margin-bottom: 12px;
+        }
+
+        .filter {
+            border-collapse: separate;
+            margin: 25px 0;
+            font-size: 15px;
+            font-family: sans-serif;
+            width: 100%;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .filter thead tr {
+            background-color: #009879;
+            color: #ffffff;
+            text-align: left;
+        }
+
+        .filter th {
+            cursor: pointer;
+        }
+
+        .filter th,
+        .filter td {
+            padding: 12px 12px;
+        }
+
+        form {
+            display: inline;
+        }
+
+        label {
+            font-family: sans-serif;
+            font-size: 22px;
+            color: aliceblue;
+            margin-left: 10px;
+        }
+
+        .l {
+            color: white;
+            font-size: 25px;
+            font-weight: bolder;
+        }
+
+        #header {
+            width: 100%;
+            height: 58px;
+            background-color: darkgray;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        #div1 {
+            margin: 0 auto;
+            width: 100%;
+            background-color: #009879;
+        }
+
+        #but {
+            margin-left: 9px;
+            margin-top: 6px;
+            width: 130px;
+            font-size: 16px;
+            text-align: center;
+            color: white;
+            padding: 12px 12px 12px 9px;
+            border: 1px solid white;
+            background-color: cornflowerblue;
+            cursor: pointer;
+            left: 1200px;
+        }
+        #but1 {
+            width: 100%;
+            font-size: 16px;
+            text-align: center;
+            color: white;
+            padding: 12px 12px 12px 9px;
+            border: 1px solid white;
+            background-color: cornflowerblue;
+            cursor: pointer;
+        }
+    </style>
+    <script src="~/Scripts/JavaScriptProfileTrener.js"></script>
+
+    <script>
+
+    </script>
+
+</head>
+
+<body>
+    <div id="header">
+
+        <form action="~/Home/Index"><input id="but" type="submit" value="HOME" /></form>
+        <form action="~/Profil/Index"><input style="background-color:cornflowerblue" id="but" type="submit" value="Izmeni podatke" /></form>
+
+    </div>
+    <hr>
+
+    <h1>Dobrodosli @ViewBag.korisnik.Ime @ViewBag.korisnik.Prezime !</h1>
+    <br />
+    <hr>
+
+    <div id="div1">
+        <label for="username"><b>Username:  </b></label>
+        <label class="l" name="username" id="username" required>@ViewBag.korisnik.Username</label>
+        <br />
+        <br />
+        <label for="ime"><b>Ime:  </b></label>
+        <label class="l" name="ime" id="ime" required>@ViewBag.korisnik.Ime</label>
+        <br />
+        <br />
+
+        <label for="prezime"><b>Prezime:  </b></label>
+        <label class="l" name="prezime" id="prezime" required>@ViewBag.korisnik.Prezime</label>
+        <br />
+        <br />
+
+        <label for="lozinka"><b>Lozinka:  </b></label>
+        <label class="l" name="lozinka" id="lozinka" required>@ViewBag.korisnik.Lozinka</label>
+        <br />
+        <br />
+        <label for="email"><b>Email:  </b></label>
+        <label class="l" name="email" id="email" required>@ViewBag.korisnik.Email</label>
+        <br />
+        <br />
+        <label for="pol"><b>Pol:  </b></label>
+        <label class="l" name="pol" id="pol" required>@ViewBag.korisnik.Pol</label>
+        <br />
+        <br />
+        <label for="datumrodjenja"><b>Datum rodjenja:  </b></label>
+        <label class="l" name="datumrodjenja" id="datumrodjenja" required>@ViewBag.korisnik.DatumRodjenja.ToString("dd/MM/yyyy").Replace('.', '/')</label>
+    </div>
+
+    <hr>
+    <br />
+
+    <h2 style="text-align:center">Moji odrzani treninzi</h2>
+
+    <br />
+    <br />
+
+<input type="text" id="nazivInput" placeholder="Search by naziv..." />
+<input type="text" id="adresaInput" placeholder="Search by tip..." />
+<input type="text" id="godinaInputFrom" placeholder="Search from year..." />
+<input type="text" id="godinaInputTo" placeholder="Search to year..." />
+<input type="button" id="btn" onclick="SearchTrener()" value="Search" />
+
+
+<table class="filter" id="filterTabela">
+    <thead>
+        <tr>
+            <th onclick="sortTable(0)">Naziv</th>
+            <th onclick="sortTable(1)">Tip</th>
+            <th>Datum i Vreme</th>
+            <th>Fitnes Centar</th>
+            <th>Lista prijavljenih</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in ViewBag.gt)
+        {
+        <tr>
+            <td>@item.Naziv</td>
+            <td>@item.Tip</td>
+            <td>@item.DatumVreme</td>
+            <td>@item.FCentar</td>
+            <td><form action="~/Trener/Prijavljeni"><input type="hidden" name="id" value="@item.Id" /><input type="submit" value="Prijavljeni" id="but1" /></form></td>
+        </tr>
+
+        }
+    </tbody>
+</table>
+
+<br />
+<br />
+
+
+<h2 style="text-align:center">Moji predstojieci treninzi</h2>
+
+<br />
+<br />
+
+<table class="filter">
+    <thead>
+        <tr>
+            <th>Naziv</th>
+            <th>Tip</th>
+            <th>Datum i Vreme</th>
+            <th>Fitnes Centar</th>
+            <th>Lista prijavljenih</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in ViewBag.gtP)
+        {
+            <tr>
+                <td>@item.Naziv</td>
+                <td>@item.Tip</td>
+                <td>@item.DatumVreme</td>
+                <td>@item.FCentar</td>
+                <td><form action="~/Trener/Prijavljeni"><input type="hidden" name="id" value="@item.Id"/><input type="submit" value="Prijavljeni" id="but1"/></form></td>
+            
+            </tr>
+
+        }
+    </tbody>
+</table>
+
+</body>

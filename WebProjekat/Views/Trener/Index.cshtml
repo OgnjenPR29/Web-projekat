@@ -1,0 +1,161 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    var treninzi = ViewBag.tr;
+}
+
+<head>
+    <style>
+
+        input:invalid {
+            border: 3px solid red;
+        }
+
+        #div1 {
+            background-color: darkgray;
+            height: 58px;
+            width: 100%;
+        }
+
+        #but {
+            width: 100%;
+            font-size: 20px;
+            text-align: center;
+            color: white;
+            padding: 9px 9px 9px 9px;
+            border: 1px solid white;
+            background-color: cornflowerblue;
+            cursor: pointer;
+        }
+        #buth {
+            width: 100px;
+            font-size: 20px;
+            text-align: center;
+            color: white;
+            margin-top:7px;
+            margin-left:5px;        
+            padding: 9px 9px 9px 9px;
+            border: 1px solid white;
+            background-color: cornflowerblue;
+            cursor: pointer;
+        }
+
+        table {
+            border: solid 1px white;
+            border-collapse: collapse;
+            font-size: 16px;
+            font-family: sans-serif;
+            width: 100%
+        }
+
+        thead th {
+            background-color: #009879;
+            border: solid 1px white;
+            color: white;
+            padding: 10px;
+            text-align: left;
+        }
+
+        tbody td {
+            border: solid 1px white;
+            color: black;
+            padding: 10px;
+        }
+
+        form {
+        }
+
+        input[type=text], input[type=password], input[type=date], select, input[type=number], input[type=datetime-local] {
+            width: 100%;
+            padding: 15px;
+            margin: 5px 0 22px 0;
+            display: inline-block;
+            border: none;
+            background: #f1f1f1;
+        }
+
+            input[type=text]:focus, input[type=password]:focus {
+                background-color: #ddd;
+                outline: none;
+            }
+    </style>
+
+
+</head>
+
+<div id="div1">
+
+    <form action="~/Home/Index"><input id="buth" type="submit" value="HOME"/></form>
+
+</div>
+
+<h2 style="text-align:center">Upravljajte vasim treninzima</h2>
+<div class="container">
+    <table id="tab">
+        <thead><tr><th>Naziv</th><th>Tip</th><th>Trajanje</th><th>Datum i Vreme</th><th>Kapacitet</th><th>Trenutrno popunjeno</th><th>Prijava</th></tr></thead>
+        <tbody>
+            @foreach (var b in treninzi)
+            {
+                <tr>
+                    <td>@b.Naziv</td>
+                    <td>@b.Tip</td>
+                    <td>@b.TrajanjeTreninga</td>
+                    <td>@b.DatumVreme</td>
+                    <td>@b.Kapacitet</td>
+                    <td>@b.Spisak.Count</td>
+                    <td>
+                        <form action="~/Trener/Izmeni">
+                            <input type="hidden" name="id" value="@b.Id" />
+                            <input type="submit" id="but" value="Izmeni" />
+                        </form>
+                        @if (b.Spisak.Count <= 0)
+                        {
+                        <form action="~/Trener/Brisanje">
+                            <input type="hidden" name="id" value="@b.Id" />
+                            <input type="submit" id="but" value="Obrisi" />
+                        </form>
+                        }
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<br />
+<br />
+<hr>
+<br />
+<br />
+
+<h2 style="text-align:center;font-family:sans-serif">Dodajte novi trening</h2>
+
+<div style="border: 1px solid #009879; padding:9px 9px 9px 9px">
+    <form action="~/Trener/NoviTrening">
+
+        <label for="naziv">Naziv:</label>
+        <input type="text" name="naziv" id="naziv" placeholder="Naziv grupnog treninga" required />
+
+        <label for="tip">Tip:</label>
+        <input type="text" name="tip" id="tip" placeholder="Tip grupnog treninga" required />
+
+        <input type="hidden" name="fcentar" id="fcentar" value="@ViewBag.c" required />
+
+        <label for="trajanje">Trajanje:</label>
+        <input type="number" min="1" name="trajanje" id="trajanje" placeholder="Trajanje grupnog treninga(min)" required />
+
+        <label for="datumvreme">Datum i vreme:</label>
+        <input type="datetime-local" name="datumvreme" id="datumvreme" min="@ViewBag.godina-@ViewBag.mesec-@ViewBag.dan@ViewBag.sati:@ViewBag.minuti:00" required />
+
+        <label for="kapacitet">Kapacitet:</label>
+        <input type="number" min="1" name="kapacitet" id="kapacitet" placeholder="Kapacitet grupnog treninga" required />
+
+        <input type="hidden" name="isdeleted" value="false" />
+
+        <input type="submit" id="but" value="Dodaj novi trening" />
+
+    </form>
+
+
+</div>

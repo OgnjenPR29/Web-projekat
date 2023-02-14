@@ -1,0 +1,5 @@
+Flex;Kralja Petra 7;Beograd;12000;2010;pera1;2000;15000;2000;1000;5000;False
+Mega Gym;Kosovska 1;Bajina Basta;31250;2015;mika1;3000;18000;3000;2000;7000;False
+Extra Fit;Kneza Milana 7;Beograd;12000;2013;pera1;1500;12000;1500;1000;4000;True
+TCentar;Titova bb;Uzice;32000;1989;pera1;1231;6545;5454;6455;5665;False
+novi;nova;novo;1234567890;2007;pera1;2000;20000;2000;1000;5000;True

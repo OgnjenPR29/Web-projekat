@@ -1,0 +1,10 @@
+Grupni trening 1;crossfit;Flex Kralja Petra 7 Beograd;90;19/07/2022 12:50:00;10;zika1,jova1,maja1,zmaj,whistler,maja;False;mikaa
+Grupni trening 2;yoga;Flex Kralja Petra 7 Beograd;60;12/07/2022 11:00:00;4;jova1,maja1,zmaj,whistler;False;mikaa
+Grupni trening 3;body pump;Mega Gym Kosovska 1 Bajina Basta;120;01/06/2022 12:10:00;10;zika1,jova1,zmaj,whistler;False;mikaa
+Grupni Trening 4;crossfit;Mega Gym Kosovska 1 Bajina Basta;120;20/03/2022 13:10:00;10;zmaj;False;marko1
+Grupni Trening 5;gym;Mega Gym Kosovska 1 Bajina Basta;60;20/06/2022 12:30:00;5;;True;marko1
+Grupni Trening 6;gym;Mega Gym Kosovska 1 Bajina Basta;118;08/05/2022 20:00:00;12;;False;marko1
+Grupni Trening 7;body pump;Mega Gym Kosovska 1 Bajina Basta;100;21/07/2022 15:01:00;11;;False;marko1
+Grupni Trening 8;yoga;Mega Gym Kosovska 1 Bajina Basta;120;21/07/2022 10:00:00;20;maja;False;marko1
+Grupni Trening 10;yoga;Mega Gym Kosovska 1 Bajina Basta;120;14/07/2022 17:00:00;12;zmaj;False;marko1
+Probni;yoga;Mega Gym Kosovska 1 Bajina Basta;45;04/08/2022 18:00:00;13;;True;marko1
